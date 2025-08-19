@@ -4,6 +4,7 @@ namespace Lunar\Api\Overrides;
 
 use ApiPlatform\Metadata\Resource\Factory\ResourceNameCollectionFactoryInterface;
 use ApiPlatform\Metadata\Resource\ResourceNameCollection;
+use Lunar\Api\Resources;
 
 class ResourceNameCollectionFactory implements ResourceNameCollectionFactoryInterface
 {
@@ -13,8 +14,8 @@ class ResourceNameCollectionFactory implements ResourceNameCollectionFactoryInte
     {
         // @TODO: this should be opt-in
         $classes = [
-            '\\Lunar\\Api\\Models\\Brand',
-            '\\Lunar\\Api\\Models\\Product',
+            Resources\Brand::class,
+            Resources\Product::class,
         ];
 
         $base = $this->decorated->create();
