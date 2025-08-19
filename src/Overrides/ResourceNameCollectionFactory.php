@@ -11,6 +11,7 @@ class ResourceNameCollectionFactory implements ResourceNameCollectionFactoryInte
 
     public function create(): ResourceNameCollection
     {
+        // @TODO: this should be opt-in
         $classes = [
             '\\Lunar\\Api\\Models\\Brand',
             '\\Lunar\\Api\\Models\\Product',
