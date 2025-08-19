@@ -3,7 +3,6 @@
 namespace Lunar\Api\Models;
 
 use ApiPlatform\Laravel\Eloquent\Filter\OrderFilter;
-use ApiPlatform\Metadata\ApiFilter;
 use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\GetCollection;
@@ -34,10 +33,10 @@ class Brand
                     uriTemplate: '/brands',
                     parameters: [
                         'sort[:property]' => new QueryParameter(
-                            filter: new OrderFilter(),
+                            filter: new OrderFilter,
                             properties: ['name'],
                             property: 'name'
-                        )
+                        ),
                     ]
                 ),
             ],
