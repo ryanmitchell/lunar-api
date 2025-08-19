@@ -1,0 +1,49 @@
+{
+  "name": "lunarphp/api",
+  "description": "Lunar REST and GraphQL APIs",
+  "keywords": [
+    "lunar",
+    "laravel",
+    "ecommerce",
+    "e-commerce",
+    "headless",
+    "store",
+    "shop",
+    "cart"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Lunar",
+      "homepage": "https://lunarphp.io/"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Lunar\\Api\\": "src",
+      "Lunar\\Api\\Database\\Factories\\": "database/factories"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Lunar\\Api\\Tests\\": "tests"
+    }
+  },
+  "extra": {
+    "lunar": {
+      "name": "API"
+    },
+    "laravel": {
+      "providers": [
+        "Lunar\\Api\\ApiServiceProvider"
+      ]
+    }
+  },
+  "require": {
+    "php": "^8.3",
+    "api-platform/laravel": "^4.0.0",
+    "lunarphp/lunar": "^1.0.0",
+    "laravel/pint": "^1.24"
+  }
+}
