@@ -11,7 +11,11 @@ final class Product
 
     public Collection $brand;
 
+    public Collection $productType;
+
     public array $attributeData;
+
+    public string $status;
 
     public function __construct(Model $model)
     {
@@ -24,6 +28,14 @@ final class Product
         ]);
 
         // @TODO: should be a DTO
+        $this->productType = collect([
+            'id' => $model->product_type_id,
+            'name' => $model->productType->name,
+        ]);
+
+        // @TODO: should be a DTO
         $this->attributeData = json_decode($model->attribute_data->toJson(), true);
+
+        $this->status = $model->status;
     }
 }
