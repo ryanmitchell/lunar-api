@@ -17,7 +17,7 @@ final class Product
 
     public int $id;
 
-    public Collection $brand;
+    public Brand $brand;
 
     public Collection $productType;
 
@@ -32,10 +32,13 @@ final class Product
         $this->id = $model->id;
 
         // @TODO: should be a DTO
-        $this->brand = collect([
-            'id' => $model->brand_id,
-            'name' => $model->brand->name,
-        ]);
+//        $this->brand = collect([
+//            'id' => $model->brand_id,
+//            'name' => $model->brand->name,
+//        ]);
+        if ($model->brand) {
+            $this->brand = new Brand($model->brand);
+        }
 
         // @TODO: should be a DTO
         $this->productType = collect([
